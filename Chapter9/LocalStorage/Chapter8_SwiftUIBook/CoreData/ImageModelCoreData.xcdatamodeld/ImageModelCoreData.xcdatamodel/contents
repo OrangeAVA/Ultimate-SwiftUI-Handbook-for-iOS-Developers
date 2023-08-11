@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21754" systemVersion="22F66" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="ImageCoreData" representedClassName="ImageCoreData" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="YES" attributeType="String"/>
+        <attribute name="liked_by_user" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="likes" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="url" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UrlsCoreData"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UserCoreData"/>
+    </entity>
+    <entity name="UrlsCoreData" representedClassName="UrlsCoreData" parentEntity="ImageCoreData" syncable="YES" codeGenerationType="class">
+        <attribute name="full" optional="YES" attributeType="String"/>
+        <attribute name="regular" optional="YES" attributeType="String"/>
+        <attribute name="small" optional="YES" attributeType="String"/>
+        <attribute name="thumb" optional="YES" attributeType="String"/>
+        <relationship name="urls" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ImageCoreData"/>
+    </entity>
+    <entity name="UserCoreData" representedClassName="UserCoreData" parentEntity="ImageCoreData" syncable="YES" codeGenerationType="class">
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="users" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UserCoreData"/>
+    </entity>
+</model>
